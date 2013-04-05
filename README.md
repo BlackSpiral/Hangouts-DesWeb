@@ -1,4 +1,4 @@
-Hangouts-DesWeb
+deswebIO-organizer
 ===============
 
 Organizador Hangouts DesarrolloWeb
@@ -11,4 +11,4 @@ Tecnología: PHP  + MySQL, Freamwork codeigniter,  HTML5 + CSS + JQuery -> GitHU
 
 Planeación -> https://beta.mural.ly/#/phirequiem/1365193744475
 
-Demo -> http://blackspiral.eu/demos/DesWeb-organizer
+Demo -> http://blackspiral.eu/demos/deswebIO-organizer

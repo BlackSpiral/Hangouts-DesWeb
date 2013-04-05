@@ -9,6 +9,10 @@ SOLUCIÓN: hacer un sistema que catalogue los vídeos  pueda almacenar archivos 
 
 Tecnología: PHP  + MySQL, Freamwork codeigniter,  HTML5 + CSS + JQuery -> GitHUB
 
-Planeación -> https://beta.mural.ly/#/phirequiem/1365193744475
+Planeación -> http://mrl.li/YB7jP8
 
 Demo -> http://blackspiral.eu/demos/deswebIO-organizer
+
+
+
+___________________________________________________________

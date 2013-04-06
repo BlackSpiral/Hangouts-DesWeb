@@ -11,8 +11,9 @@ Tecnología: PHP  + MySQL, Freamwork codeigniter,  HTML5 + CSS + JQuery -> GitHU
 
 Planeación -> http://mrl.li/YB7jP8
 
-Demo -> http://blackspiral.eu/demos/deswebIO-organizer
+Demo datos utiles -> http://blackspiral.eu/demos/deswebIO-organizer/-vista_beta-
 
 
 
 ___________________________________________________________
+Configurar

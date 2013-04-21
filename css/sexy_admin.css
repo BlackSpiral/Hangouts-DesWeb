@@ -1,0 +1,97 @@
+body {
+	background: #E3E7F2;
+	font-family: helvetica;
+	font-size: 16px;
+	text-rendering: optimizeLegibility;
+}
+a:hover {
+	text-decoration: none;
+}
+
+/*** formulario Login **/
+#login_forma>.input-prepend {
+	display: block ;
+}
+.loginbox {
+	background: #E6E6E6;
+	border: 1px solid #999;
+	border-radius: 0.5em;
+	-webkit-border-radius: 0.5em;
+	-moz-border-radius: 0.5em;
+	-ms-border-radius: 0.5em;
+	-o-border-radius: 0.5em;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+	-ms-box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+	-o-box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+  	padding: 0px 2em;
+	text-align: center;
+}
+.loginbox input {
+  width: 87%;
+}
+/*** Ende formulario ingreso ***/
+
+.top-space {height: 60px;}
+/** Youtube Responsive **/
+.video-container {
+	padding-bottom: 56.25%;
+	padding-top: 30px; height: 0; overflow: hidden;
+	position: relative;
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+/** End Youtube Responsive **/
+.footer {
+	background-color: #2d2e33;
+	border-top: 1px solid #e5e5e5;
+	color: #888;
+	font-size: 14px;
+	margin-top: 20px;
+	padding: 15px 0 5px 0;
+}
+.footer a {
+	color: #888;
+}
+.foot-logo {
+	text-align: right;
+}
+/** Extras **/
+.space-1 {
+	margin: 0.5em 0;
+}
+.space-2 {
+	margin: 1em 0;
+}
+.space-3 {
+	margin: 1.5em 0;
+}
+/** End Extras **/
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+.loginbox h1 {font-size: 2em;}
+}

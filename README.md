@@ -16,4 +16,11 @@ Demo datos utiles -> http://blackspiral.eu/demos/deswebIO-organizer/-vista_beta-
 
 
 ___________________________________________________________
-Configurar
+Configuración
+/application/config/config.php
+	base_url | encryption_key
+/application/config/database.php
+	hostname | username | Password | database
+
+el script para crear las tablas se encuentra en /tablas.sql
+MySQL client version -> 5.5.23

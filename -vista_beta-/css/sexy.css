@@ -1,0 +1,127 @@
+/*
+Description: Organizador Hangouts DesarrolloWeb
+Version: 1.0
+Author: @PhiRequiem
+Author URI: http://blackspiral.eu
+*/
+body {
+	background: #E3E7F2;
+	font-family: helvetica;
+	font-size: 16px;
+	text-rendering: optimizeLegibility;
+}
+a:hover {
+	text-decoration: none;
+}
+
+.top-space {height: 60px;}
+/** Youtube Responsive **/
+.video-container {
+	padding-bottom: 56.25%;
+	padding-top: 30px; height: 0; overflow: hidden;
+	position: relative;
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+/** End Youtube Responsive **/
+ .title-io h1 {
+	color: #6699FF;
+	font-size: 32px;
+	line-height: 1.125em
+}
+ .title-io h1>span {
+	color: black;
+	font-size: 0.8em;
+}
+ .info-io, .ponentes-io, .links-io {
+ 	background: white;
+ 	border: solid 1px #DDD;
+ 	border-radius: 0.3em;
+ 	padding: 5px 10px;
+}
+.info-io ul, .ponentes-io ul, .links-io ul {
+   margin: 0;
+   padding: 0;
+}
+.info-io li, .ponentes-io li, .links-io li {
+	border-bottom: 1px dotted #DDD;
+	list-style-type: none;
+}
+.info-io span, .ponentes-io span  .links-io span {
+	color: #999;
+	margin-left: 0.5em;
+}
+.apuntes {
+	background: #333;
+	border-radius: 0.3em;
+	color: #CFCFCF;
+	padding: 15px;
+}
+.apuntes h3 {
+	color: #EF7700;
+	font-size: 20px;
+	line-height: 1.125em;
+	text-align: right;
+}
+.apuntes p {
+	text-align: justify;
+}
+.footer {
+	background-color: #2d2e33;
+	border-top: 1px solid #e5e5e5;
+	color: #888;
+	font-size: 14px;
+	margin-top: 20px;
+	padding: 15px 0 5px 0;
+}
+.footer a {
+	color: #888;
+}
+.foot-logo {
+	text-align: right;
+}
+/** Extras **/
+.space-1 {
+	margin: 0.5em;
+}
+.space-2 {
+	margin: 1em;
+}
+.space-3 {
+	margin: 1.5em;
+}
+/** End Extras **/
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+	.top-space {height: 0px;}
+	.title-io h1 {font-size: 26px;}
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	.top-space {height: 0px;}
+
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.top-space {height: 0px;}
+	.title-io h1 {font-size: 18px; display: block;}
+	.title-io h1 {font-size: 18px; display: block;}
+	.apuntes {margin: 1em 0;}
+	.foot-logo {text-align: center;}
+	.footer {text-align: center;}
+}

@@ -7,7 +7,11 @@ body {
 a:hover {
 	text-decoration: none;
 }
-
+h2 {
+	font-size: 1.3em;
+	margin: 0;
+	padding: 0;
+}
 /*** formulario Login **/
 #login_forma>.input-prepend {
 	display: block ;
@@ -29,11 +33,23 @@ a:hover {
 	text-align: center;
 }
 .loginbox input {
-  width: 87%;
+ 	width: 87%;
 }
 /*** Ende formulario ingreso ***/
 
 .top-space {height: 60px;}
+.add_video input[type='url'] {
+	font-size: 1.5em;
+	height: 44px;	
+}
+.listas {
+	background: white;
+ 	border: solid 1px #DDD;
+ 	border-radius: 0.3em;
+ 	padding: 5px 10px;
+}
+
+
 /** Youtube Responsive **/
 .video-container {
 	padding-bottom: 56.25%;

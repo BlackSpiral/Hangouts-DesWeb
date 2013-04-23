@@ -21,10 +21,11 @@ class Admin extends Ci_Controller {
 					print_r($youtube_data);
 					echo '</pre><br><br><br>';
 				} else {
-					echo 'Ups!! - el video no existe (u_u\')';
+					echo 'Ups!! - el video no existe (u_u\')</br>hola';
+					var_dump($this->input->post());
 				}
 			} else {
-				echo "mo post";
+				redirect('/admin', 'refresh');
 			}
 		} else {
 			$this->load->view('admin/login_form');

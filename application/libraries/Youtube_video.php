@@ -37,7 +37,7 @@ class Youtube_video
         $youtube_id = $this->youtube_id($youtube_url);
         if (isset($youtube_id)) 
         {
-            $data_url = 'http://gdata.youtube.com/feeds/api/videos/sCvhhBySYzE';
+            $data_url = 'http://gdata.youtube.com/feeds/api/videos/'.$youtube_id;
             if($conex= @fopen($data_url,"rt")) {
             $youtube_xml = simplexml_load_file('https://gdata.youtube.com/feeds/api/videos/'.$youtube_id); 
 
@@ -53,7 +53,7 @@ class Youtube_video
             $youtube_data['title'] = htmlentities($media->group->title); //equivalentes HTML convertidos a esas entidades
             $youtube_data['author'] = $youtube_xml->author;
             $youtube_data['category'] = $media->group->category;
-            $youtube_data['published'] = $youtube_xml->published;
+            $youtube_data['published'] = (string)$youtube_xml->published;
             $youtube_data['updated'] =  $youtube_xml->updated;
             $youtube_data['keywords'] = $media->group->keywords;
             if($yt2->statistics) {
@@ -64,20 +64,27 @@ class Youtube_video
             
         /*** Asigno duracion y doy formato ***/
             $attrs = $yt->duration->attributes();
-            $youtube_data['duration'] = $attrs['seconds'];
+            $youtube_data['duration'] = (string)$attrs['seconds'];
             $youtube_data['duration_format'] = gmdate("H:i:s",intval($attrs['seconds']));
         /*** valido existencia de descripcion ***/
             if ($media->group->description && $media->group->description != '') {
-                $youtube_data['description'] = $media->group->description;
+                $youtube_data['description'] = (string)$media->group->description;
             } else {
                 $youtube_data['description'] = null; 
             }
         /*** Obtengo imagenes ***/
-            $attrs = $media->group->thumbnail[0]->attributes();
-            $youtube_data['0_thumbnail'] = $media->group->thumbnail[0]->attributes();
-            $youtube_data['1_thumbnail'] = $media->group->thumbnail[1]->attributes();
-            $youtube_data['2_thumbnail'] = $media->group->thumbnail[2]->attributes();
-            $youtube_data['3_thumbnail'] = $media->group->thumbnail[3]->attributes();
+            foreach($media->group->thumbnail[0]->attributes() as $k => $v) {
+                $youtube_data['0_thumbnail'][$k] = (string)$v;
+            }
+            foreach($media->group->thumbnail[1]->attributes() as $k => $v) {
+                $youtube_data['1_thumbnail'][$k] = (string)$v;
+            }
+            foreach($media->group->thumbnail[2]->attributes() as $k => $v) {
+                $youtube_data['2_thumbnail'][$k] = (string)$v;
+            }
+            foreach($media->group->thumbnail[3]->attributes() as $k => $v) {
+                $youtube_data['3_thumbnail'][$k] = (string)$v;
+            }
 
             if ($gd->rating) {
                 $youtube_data['rating'] = $gd->rating->attributes(); 

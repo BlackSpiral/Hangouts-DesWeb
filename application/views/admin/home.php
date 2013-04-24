@@ -116,3 +116,25 @@ $send_b = array(
 </body>
 </body>
 </html>
+
+
+<!-- 
+array (
+	'id' => $youtube_data['id'],
+	'youtube_id' => $youtube_data['youtube_id'],
+	'title' => $youtube_data['title'],
+	'hashtag' => '****************,,',
+	'published' => $youtube_data['published'],
+	'duration_format' => $youtube_data['duration_format'],
+	'description' => $youtube_data['description'],
+
+	'0_thumbnail' => $youtube_data['0_thumbnail'],
+	'1_thumbnail' => $youtube_data['1_thumbnail'],
+	'2_thumbnail' => $youtube_data['2_thumbnail'],
+	'3_thumbnail' => $youtube_data['3_thumbnail'],
+
+	'pendin' => '1'
+	'create' => date("Y-m-d H:i:s"),
+	'create_by' => $this->session->userdata('email');
+);
+ -->

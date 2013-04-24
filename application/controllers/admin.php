@@ -17,11 +17,17 @@ class Admin extends Ci_Controller {
 				$youtube_url = $this->input->post('youtube_url');
 				$this->load->library('youtube_video');
 				if($youtube_data = $this->youtube_video->youtube_data($youtube_url)) {
-					echo '<pre>'; var_dump($youtube_data); echo '</pre><br><br>';
+					// echo '<pre>'; var_dump($youtube_data); echo '</pre><br><br>';
+					echo $youtube_data['title'].'<br>';
+					// $hash1 = preg_match("/#(\w+)/", $youtube_data['title'], $hash);
+					$hash1 = preg_match_all("/#(\w+)/", $youtube_data['title'], $hash, PREG_OFFSET_CAPTURE);
+					var_dump($hash);
+					$hashtags = implode($hash);
+					echo $hashtags;
 					$valores = array(
 					'youtube_id' => $youtube_data['youtube_id'],
 					'title' => $youtube_data['title'],
-					'hashtag' => '****************,,',
+					'hashtags' => '****************,,',
 					'published' => (string)$youtube_data['published'],
 					'duration_format' => $youtube_data['duration_format'],
 					'description' => $youtube_data['description'],
@@ -37,7 +43,7 @@ class Admin extends Ci_Controller {
 						'valores' => $valores
 						);
 					if($insert = $this->General_model->insert_item($param)) {
-						echo "string";
+						echo "agregado con exito";
 					}
 				} else {
 					echo 'Ups!! - el video no existe o la url es incorrecta (u_u\')';
@@ -49,7 +55,7 @@ class Admin extends Ci_Controller {
 			$this->load->view('admin/login_form');
 		}
 	}
-	
+
 /***** sistema de login *****/
 	public function user_login() {
 		if($this->session->userdata('email')){ redirect('/admin', 'refresh'); }

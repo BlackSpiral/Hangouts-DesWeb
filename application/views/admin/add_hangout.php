@@ -19,6 +19,13 @@ $send_b = array(
 ?>
 
 <div class="container">
+<!-- Notificaciones -->
+<?php if(isset($error)) { ?>
+<div class="alert alert-error">
+<button type="button" class="close" data-dismiss="alert">&times;</button>
+<strong>Upss!</strong> <?php echo $error; ?>
+</div>
+<!-- Fin Notificaciones -->
 	<?php echo form_open('admin/add_hangout', $add_video); ?>
 	<div class="controls controls-row">
 	<?php echo form_input($yt_input); ?>
@@ -26,39 +33,7 @@ $send_b = array(
 	</div>
 	<?php echo form_close(); ?>
 	<div class="space-2"></div>
-	<div class="row-fluid">
-		<div class="span4"><h2>Últimos Agregados</h2>
-			<div class="listas">
-				<ul>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-				</ul>
-			</div>
-		</div>
-		<div class="span4"><h2>Últimos Editados</h2>
-			<div class="listas">
-				<ul>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-				</ul>
-			</div>
-		</div>
-		<div class="span4"><h2>Incompletos</h2>
-			<div class="listas">
-				<ul>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-				</ul>
-			</div>
-		</div>
-	</div>
+<?php } else { ?>
+<?php echo '<pre>'; var_dump($valores); echo '</pre>'; ?>
+<?php } ?>
 </div>

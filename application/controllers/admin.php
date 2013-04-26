@@ -2,32 +2,30 @@
 class Admin extends Ci_Controller {
 	public function index() {
 		if($this->session->userdata('email')) {
-			$data['title'] = 'Organiza tus HangOuts';
+			$data['title'] = 'Panel HangOuts';
+			$this->load->view('admin/include/admin_head');
 			$this->load->view('admin/home', $data);
-			$data['title'] = 'Todo OK d(^_^o)';
+			$this->load->view('admin/include/admin_foot');
 		} else {
 			$this->load->view('admin/login_form');
 		}
 
 	}
 
+// http://www.youtube.com/watch?v=U6Vf4zZiKAA&list=PLIcuwIrm4rKf_JLA0v2GlAeRL4q0QN2BJ&index=21
 	public function add_hangout() {
 		if($this->session->userdata('email')) {
 			if($this->input->post()) {
 				$youtube_url = $this->input->post('youtube_url');
 				$this->load->library('youtube_video');
 				if($youtube_data = $this->youtube_video->youtube_data($youtube_url)) {
-					// echo '<pre>'; var_dump($youtube_data); echo '</pre><br><br>';
-					echo $youtube_data['title'].'<br>';
-					// $hash1 = preg_match("/#(\w+)/", $youtube_data['title'], $hash);
-					$hash1 = preg_match_all("/#(\w+)/", $youtube_data['title'], $hash, PREG_OFFSET_CAPTURE);
-					var_dump($hash);
-					$hashtags = implode($hash);
-					echo $hashtags;
+					preg_match_all("/#(\w+)/", $youtube_data['title'], $hash);
+					$hashtags = implode(', ', $hash[0]);
+					var_dump($hashtags);
 					$valores = array(
 					'youtube_id' => $youtube_data['youtube_id'],
 					'title' => $youtube_data['title'],
-					'hashtags' => '****************,,',
+					'hashtags' => $hashtags,
 					'published' => (string)$youtube_data['published'],
 					'duration_format' => $youtube_data['duration_format'],
 					'description' => $youtube_data['description'],
@@ -43,10 +41,19 @@ class Admin extends Ci_Controller {
 						'valores' => $valores
 						);
 					if($insert = $this->General_model->insert_item($param)) {
-						echo "agregado con exito";
+						$data['title'] = 'Info HangOuts';
+						$data['valores'] = $valores;
+						$this->load->view('admin/include/admin_head');
+						$this->load->view('admin/add_hangout', $data);
+						$this->load->view('admin/include/admin_foot');
 					}
 				} else {
-					echo 'Ups!! - el video no existe o la url es incorrecta (u_u\')';
+					$data['title'] = 'Info HangOuts';
+					$data['youtube_url'] = $youtube_url;
+					$data['error'] = ' - el video no existe o la url es incorrecta ¯\(°_o)/¯';
+					$this->load->view('admin/include/admin_head');
+					$this->load->view('admin/add_hangout', $data);
+					$this->load->view('admin/include/admin_foot');
 				}
 			} else {
 				redirect('/admin', 'refresh');

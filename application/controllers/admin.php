@@ -3,8 +3,8 @@ class Admin extends Ci_Controller {
 	public function index() {
 		if($this->session->userdata('email')) {
 			$data['title'] = 'Panel HangOuts';
-			$this->load->view('admin/include/admin_head');
-			$this->load->view('admin/home', $data);
+			$this->load->view('admin/include/admin_head', $data);
+			$this->load->view('admin/home');
 			$this->load->view('admin/include/admin_foot');
 		} else {
 			$this->load->view('admin/login_form');
@@ -43,16 +43,22 @@ class Admin extends Ci_Controller {
 					if($insert = $this->General_model->insert_item($param)) {
 						$data['title'] = 'Info HangOuts';
 						$data['valores'] = $valores;
-						$this->load->view('admin/include/admin_head');
-						$this->load->view('admin/add_hangout', $data);
+						$this->load->view('admin/include/admin_head', $data);
+						$this->load->view('admin/add_hangout');
+						$this->load->view('admin/include/admin_foot');
+					} else {
+						$data['title'] = 'Info HangOuts';
+						$data['error'] = ' - Hubo un error con la Base de datos, intentalo de nuevo!! ¯\(°_o)/¯';
+						$this->load->view('admin/include/admin_head', $data);
+						$this->load->view('admin/add_hangout');
 						$this->load->view('admin/include/admin_foot');
 					}
 				} else {
 					$data['title'] = 'Info HangOuts';
 					$data['youtube_url'] = $youtube_url;
 					$data['error'] = ' - el video no existe o la url es incorrecta ¯\(°_o)/¯';
-					$this->load->view('admin/include/admin_head');
-					$this->load->view('admin/add_hangout', $data);
+					$this->load->view('admin/include/admin_head', $data);
+					$this->load->view('admin/add_hangout');
 					$this->load->view('admin/include/admin_foot');
 				}
 			} else {

@@ -41,18 +41,18 @@ $send_b = array(
 </div>
 <!-- Fin Notificaciones -->
 <div class="row-fluid">
-	<div class="span4">
+	<div class="span4 datos">
 		<div class="video-container">
 			<iframe src="http://www.youtube.com/embed/<?php echo $valores['youtube_id']; ?>" frameborder="0" width="560" height="315"></iframe>
 		</div>
 	</div>
-	<div class="span4">
+	<div class="span4 datos">
 		<strong>Titulo: </strong><?php echo $valores['title']; ?><br>
 		<strong>Publicado: </strong><?php echo $valores['published']; ?><br>
 		<strong>Duración: </strong><?php echo $valores['duration_format']; ?><br>
 		<strong>Url: </strong><a href="http://youtu.be/<?php echo $valores['youtube_id']; ?>" target="_blank">http://youtu.be/<?php echo $valores['youtube_id']; ?></a>
 	</div>
-	<div class="span4">
+	<div class="span4 datos">
 		<strong>Hashtag(s):</strong><br>
 		<p><?php echo $valores['hashtags']; ?></p>
 		<button class="btn btn-block btn-inverse" type="button">Editar Agregar Hashtag(s)</button>
@@ -62,19 +62,20 @@ $send_b = array(
 		<img src="<?php echo $valores['3_thumbnail']; ?>" alt="">
 	</div>
 </div>
+<div class="space-2"></div>
 <div class="row-fluid">
-	<div class="span4"><strong>Ponentes:</strong><br>
+	<div class="span4 datos"><strong>Ponentes:</strong><br>
 		<button class="btn btn-block btn-inverse" type="button">Agregar ponente</button>
 	</div>
-	<div class="span4"><strong>Enlaces:</strong><br>
+	<div class="span4 datos"><strong>Enlaces:</strong><br>
 		<button class="btn btn-block btn-inverse" type="button">Agregar Enlace</button>
 	</div>
-	<div class="span4"><strong>Archivos:</strong><br>
+	<div class="span4 datos"><strong>Archivos:</strong><br>
 		<button class="btn btn-block btn-inverse" type="button">Agregar Archivo</button>
 	</div>
 </div>
 <div class="row-fluid">
-	<div class="span12"><strong>Descripción</strong><br>
+	<div class="span12 datos"><strong>Descripción</strong><br>
 	<p><?php echo $valores['description']; ?></p>
 	<strong>Apuntes Extra</strong><br>
 	<button class="btn btn-block btn-inverse" type="button">Agregar Apuntes</button>

@@ -1,7 +1,7 @@
 deswebIO-organizer
 ===============
 
-Organizador Hangouts DesarrolloWeb
+Organizador Hangouts DesarrolloWeb.com
 
 PROBLEMA: no hay una organización entre los hangouts para seguir los enlaces, descripción  presentaciones, archivos, comentarios anexos, etc
 
